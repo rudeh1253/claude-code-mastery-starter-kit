@@ -1,0 +1,31 @@
+---
+title: "MDX로 글쓰기"
+date: "2026-06-20"
+description: "frontmatter 메타데이터와 MDX 본문 작성 방법을 소개합니다."
+tags: ["mdx", "guide"]
+---
+
+## Frontmatter
+
+각 포스트 상단의 `---` 블록이 메타데이터입니다.
+
+| 필드 | 설명 |
+| --- | --- |
+| `title` | 포스트 제목 |
+| `date` | 정렬 기준 날짜 (YYYY-MM-DD) |
+| `description` | 목록/SEO 설명 |
+| `tags` | 태그 배열 |
+
+## 본문
+
+본문은 일반 마크다운처럼 작성하되, 필요하면 React 컴포넌트도 넣을 수 있습니다.
+
+```tsx
+export const Callout = ({ children }: { children: React.ReactNode }) => (
+  <div className="rounded border-l-4 border-blue-500 bg-blue-50 p-4">
+    {children}
+  </div>
+);
+```
+
+즐겁게 블로깅하세요! 🚀
