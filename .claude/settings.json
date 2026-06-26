@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "$d = $env:CLAUDE_PROJECT_DIR; if (-not $d) { $d = '.' }; & \"$d/.claude/scripts/block-env-edit.ps1\"",
+            "statusMessage": "Checking .env guard"
+          }
+        ]
+      }
+    ]
+  }
+}
